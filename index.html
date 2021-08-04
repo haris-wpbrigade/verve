@@ -34,9 +34,9 @@
   </head>
   <body>
     <div class="main-menu">
-      <div class="site-logo">
+      <a href="#" class="site-logo">
         <img src="img/logo-mobile-ret.png" alt="logo-verve-ret" />
-      </div>
+      </a>
       <div class="toggleBtn">
         <span>menu</span>
         <div class="toggle-bars">
@@ -52,6 +52,7 @@
     </div>
 
     <div class="container">
+      <div class="overlay"></div>
       <nav class="nav-menu">
         <ul class="menu-list">
           <li class="active"><a href="#">home</a></li>
@@ -64,12 +65,13 @@
         </ul>
       </nav>
       <div class="content-body">
+        <video autoplay muted loop id="myVideo"></video>
         <div class="indicators">
           <div class="prev-Btn"><i class="fas fa-chevron-left"></i></div>
           <div class="next-Btn"><i class="fas fa-chevron-right"></i></div>
         </div>
         <div class="wrapper">
-          <div class="box" onmouseover="setBackIMG(`blue-sea.jpg`)">
+          <div class="box" onmouseover="setBackIMG(`blue-sea.jpg`)" >
             <div class="box-content">
               <h2>urban feel</h2>
               <p>stills,vintage</p>
@@ -90,7 +92,7 @@
               <button class="CTA-btn">read more</button>
             </div>
           </div>
-          <div class="box" onmouseover="setBackIMG(`the-boat.jpg`)">
+          <div class="box" onmouseover="PlayBackVideo(`NYC-Traffic.mp4`)">
             <div class="box-content">
               <h2>burners time</h2>
               <p>stills,vintage</p>
@@ -104,14 +106,14 @@
               <button class="CTA-btn">read more</button>
             </div>
           </div>
-          <div class="box" onmouseover="setBackIMG(`flame.jpg`)">
+          <div class="box" onmouseover="setBackIMG(`yellow-rider.jpg`)">
             <div class="box-content">
               <h2>ny city</h2>
               <p>stills,vintage</p>
               <button class="CTA-btn">read more</button>
             </div>
           </div>
-          <div class="box" onmouseover="setBackIMG(`countryside.jpg`)">
+          <div class="box" onmouseover="PlayBackVideo(`surfing.mp4`)">
             <div class="box-content">
               <h2>alaskan project</h2>
               <p>stills,vintage</p>
@@ -144,6 +146,17 @@
         nextArrow: $(".indicators .next-Btn"),
         slidesToShow: 4,
         slidesToScroll: 4,
+        responsive: [
+          {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+            }
+          }
+        ]
       });
     </script>
   </body>

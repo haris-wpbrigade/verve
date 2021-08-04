@@ -27,7 +27,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1;
+  z-index: 5;
 }
 
 .main-menu .site-logo {
@@ -85,8 +85,8 @@ body {
   transition: 0.4s;
 }
 
-.toggleBtn.active span{
-    color: #05b0dc;
+.toggleBtn.active span {
+  color: #05b0dc;
 }
 
 .toggleBtn.active .toggle-bars .bar1 {
@@ -124,19 +124,34 @@ body {
 
 .nav-menu {
   white-space: nowrap;
-  background-color: #111111;
+  background-color: #151515;
   width: 0;
   transition: width 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background: rgb(0 0 0 / 77%);
+  z-index: 4;
+  transition: 0.3s ease-in-out;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .nav-menu.active {
   width: 330px;
-}
-
-.nav-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 4;
 }
 
 .nav-menu .menu-list {
@@ -195,13 +210,12 @@ body {
   cursor: pointer;
 }
 
-.wrapper .box:nth-child(even) {
-  border-inline: 1px solid #fff;
+.wrapper .box:not(:last-child) {
+  border-right: 1px solid #ffffff4d;
 }
 
 .wrapper .box .box-content {
   position: relative;
-  margin-bottom: -40px;
   transition: 0.3s all;
 }
 
@@ -209,13 +223,18 @@ body {
   font-family: "Cabin", sans-serif;
   color: #fff;
   text-transform: uppercase;
+  transform: translateY(50px);
   margin-bottom: 6px;
+  transition: 0.3s all;
 }
 
 .wrapper .box .box-content p {
   font-family: "Droid Serif", sans-serif;
   color: #fff;
+  transform: translateY(50px);
   text-transform: capitalize;
+  margin-bottom: 15px;
+  transition: 0.3s all;
 }
 
 .wrapper .box .box-content .CTA-btn {
@@ -227,8 +246,11 @@ body {
   color: #fff;
   border: 1px solid #fff;
   outline: none;
-  cursor: pointer;
+  transform: translateX(-60px);
+  opacity: 0;
+  visibility: hidden;
   transition: 0.3s all;
+  cursor: pointer;
 }
 
 .wrapper .box .box-content .CTA-btn:hover {
@@ -236,23 +258,13 @@ body {
   color: #000;
 }
 
-.wrapper .box .box-content .CTA-btn {
-  margin-left: -40px;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s all;
-}
-
+.wrapper .box:hover .box-content h2,
 .wrapper .box:hover .box-content p {
-  margin-bottom: 15px;
-}
-
-.wrapper .box:hover .box-content {
-  margin-bottom: 0;
+  transform: translateY(0);
 }
 
 .wrapper .box:hover .box-content .CTA-btn {
-  margin-left: 0px;
+  transform: translateX(0);
   display: block;
   opacity: 1;
   visibility: visible;
@@ -266,7 +278,7 @@ body {
 .indicators {
   position: absolute;
   display: flex;
-  top: 50%;
+  top: 45%;
   transform: tranlateY(-50%);
   width: 100%;
   z-index: 2;
@@ -288,4 +300,86 @@ body {
 }
 .indicators .next-Btn {
   right: 10px;
+}
+
+#myVideo {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  inset: 0;
+  min-width: 100%;
+  min-height: 100%;
+  transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 767px) {
+  .nav-menu.active {
+    width: 450px;
+  }
+
+  .menu-icons {
+    display: none;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .content-body {
+    background-size: cover;
+  }
+
+  .wrapper .box{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #b3c6cd;
+  }
+
+  .wrapper .box:nth-child(1){
+    background-image:url('../img/flame.jpg');
+  }
+  .wrapper .box:nth-child(2){
+    background-image:url('../img/countryside.jpg');
+  }
+  .wrapper .box:nth-child(3){
+    background-image:url('../img/NYC-Traffic.jpg');
+  }
+  .wrapper .box:nth-child(4){
+    background-image:url('../img/blue-sea.jpg');
+  }
+  .wrapper .box:nth-child(5){
+    background-image:url('../img/flame.jpg');
+  }
+  .wrapper .box:nth-child(6){
+    background-image:url('../img/yellow-rider.jpg');
+  }
+  .wrapper .box:nth-child(7){
+    background-image:url('../img/surf-up.jpg');
+  }
+  .wrapper .box:nth-child(8){
+    background-image:url('../img/the-boat.jpg');
+  }
+
+  .wrapper .box,
+  .wrapper .box .box-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wrapper .box .box-content {
+    flex-direction: column;
+  }
+
+  .wrapper .box .box-content h2,
+  .wrapper .box .box-content p,
+  .wrapper .box .box-content .CTA-btn {
+    transform: none;
+  }
+
+  .wrapper .box .box-content .CTA-btn {
+    opacity: 1;
+    visibility: visible;
+  }
 }
