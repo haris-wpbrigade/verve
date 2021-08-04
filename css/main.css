@@ -1,143 +1,257 @@
 @font-face {
-    font-family: 'Droid Serif';
-    src: url('../fonts/DroidSerif.woff2') format('woff2'),
-        url('../fonts/DroidSerif.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Droid Serif";
+  src: url("../fonts/DroidSerif.woff2") format("woff2"),
+    url("../fonts/DroidSerif.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Droid Serif',sans-serif;
-    background-color: #fff;
+body {
+  font-family: "Droid Serif", sans-serif;
+  background-color: #fff;
 }
 
-.main-menu{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 15px;
-    background-color: #111111;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.main-menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: #111111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
 }
 
-.main-menu .site-logo{
-    width: 110px;
-    cursor: pointer;
+.main-menu .site-logo {
+  width: 110px;
+  cursor: pointer;
 }
 
-.main-menu .site-logo img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.main-menu .site-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.main-menu .toggleBtn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s all;
+.main-menu .toggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s all;
 }
 
-.main-menu .toggleBtn span{
-    font-family: 'Cabin', sans-serif;
-    color: #fff;
-    text-transform: uppercase;
+.main-menu .toggleBtn span {
+  font-family: "Cabin", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
 }
 
-.main-menu .toggleBtn i{
-    display: inline;
-    font-size: 22px;
-    font-weight: 700;
-    color: #fff;
-    cursor: pointer;
-    padding: 5px 12px;
+.main-menu .toggleBtn i {
+  display: inline;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px 12px;
 }
 
-
-.main-menu .toggleBtn:hover{
-    opacity: 0.7;
+.main-menu .toggleBtn:hover {
+  opacity: 0.7;
 }
 
-.main-menu .menu-icons i{
-    display: inline;
-    font-size: 22px;
-    font-weight: 700;
-    color: #fff;
-    cursor: pointer;
-    padding: 12px;
+.main-menu .menu-icons i {
+  display: inline;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  padding: 12px;
 }
 
-.main-menu .menu-icons i:hover{
-    opacity: 0.7;
+.main-menu .menu-icons i:hover {
+  opacity: 0.7;
 }
 
-.container{
-    width: 100vw;
-    height: 100vh;
-    padding-top: 62px;
-    display: flex;
-    overflow: hidden;
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 62px;
+  display: flex;
+  overflow: hidden;
 }
 
-.nav-menu{
-    white-space: nowrap;
-    background-color: #111111;  
-    width: 0;
-    transition: width 0.3s ease-in-out;
+.nav-menu {
+  white-space: nowrap;
+  background-color: #111111;
+  width: 0;
+  transition: width 0.3s ease-in-out;
 }
 
-.nav-menu.active{
-    width: 330px;
+.nav-menu.active {
+  width: 330px;
 }
 
-.nav-menu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.nav-menu .menu-list{
-    list-style-type: none;
+.nav-menu .menu-list {
+  list-style-type: none;
 }
 
-.nav-menu .menu-list li{
-    padding: 5px 0;
+.nav-menu .menu-list li {
+  padding: 5px 0;
 }
 
-.nav-menu .menu-list li a{
-    font-family: 'Cabin', sans-serif;
-    color: #fff;
-    font-size: 22px;
-    font-weight: 700;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: 0.3s all;
+.nav-menu .menu-list li a {
+  font-family: "Cabin", sans-serif;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s all;
 }
 
-.nav-menu .menu-list li.active a{
-    color: #0ab6d1;
+.nav-menu .menu-list li.active a {
+  color: #0ab6d1;
 }
 
-.nav-menu .menu-list li a:hover{
-    color: #0ab6d1;
+.nav-menu .menu-list li a:hover {
+  color: #0ab6d1;
 }
 
-.content-body{
-    background-image: url(../img/the-boat.jpg);
-    width:100%;
-    height: 100vh;
-    background-position: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+.content-body {
+  position: relative;
+  overflow: hidden;
+  background-image: url(../img/old-honda.jpg);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease-in-out;
 }
 
+.wrapper {
+  height: 100%;
+  display: flex;
+}
 
+.wrapper .box {
+  position: relative;
+  overflow: hidden;
+  width: 33.33%;
+  padding-inline: 20px;
+  padding-top: 20px;
+  padding-bottom: 100px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.wrapper .box:nth-child(even) {
+  border-inline: 1px solid #fff;
+}
+
+.wrapper .box .box-content {
+  position: relative;
+  margin-bottom: -40px;
+  transition: 0.3s all;
+}
+
+.wrapper .box .box-content h2 {
+  font-family: "Cabin", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.wrapper .box .box-content p {
+  font-family: "Droid Serif", sans-serif;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.wrapper .box .box-content .CTA-btn {
+  font-family: "Cabin", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.wrapper .box .box-content .CTA-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.wrapper .box .box-content .CTA-btn {
+  margin-left: -40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s all;
+}
+
+.wrapper .box:hover .box-content p {
+  margin-bottom: 15px;
+}
+
+.wrapper .box:hover .box-content {
+  margin-bottom: 0;
+}
+
+.wrapper .box:hover .box-content .CTA-btn {
+  margin-left: 0px;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* slick slider */
+.content-body .slick-track {
+  height: 100%;
+}
+
+.indicators {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  transform: tranlateY(-50%);
+  width: 100%;
+  z-index: 2;
+}
+
+.indicators .next-Btn,
+.indicators .prev-Btn {
+  position: absolute;
+  cursor: pointer;
+}
+
+.indicators i {
+  font-size: 36px;
+  color: #fff;
+}
+
+.indicators .prev-Btn {
+  left: 10px;
+}
+.indicators .next-Btn {
+  right: 10px;
+}
