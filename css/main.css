@@ -46,6 +46,7 @@ body {
   align-items: center;
   justify-content: center;
   transition: 0.3s all;
+  cursor: pointer;
 }
 
 .main-menu .toggleBtn span {
@@ -63,8 +64,41 @@ body {
   padding: 5px 12px;
 }
 
-.main-menu .toggleBtn:hover {
-  opacity: 0.7;
+.main-menu .toggleBtn:hover span {
+  color: #05b0dc;
+}
+
+.main-menu .toggleBtn:hover .toggle-bars .bars {
+  background-color: #05b0dc;
+}
+
+.toggle-bars {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.toggle-bars .bars {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.toggleBtn.active span{
+    color: #05b0dc;
+}
+
+.toggleBtn.active .toggle-bars .bar1 {
+  transform: rotate(-45deg) translate(-4px, 6px);
+  background-color: #05b0dc;
+}
+.toggleBtn.active .toggle-bars .bar2 {
+  opacity: 0;
+}
+.toggleBtn.active .toggle-bars .bar3 {
+  transform: rotate(45deg) translate(-6px, -9px);
+  background-color: #05b0dc;
 }
 
 .main-menu .menu-icons i {

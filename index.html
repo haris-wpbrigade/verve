@@ -39,11 +39,15 @@
       </div>
       <div class="toggleBtn">
         <span>menu</span>
-        <i class="fas fa-bars"></i>
+        <div class="toggle-bars">
+          <div class="bars bar1"></div>
+          <div class="bars bar2"></div>
+          <div class="bars bar3"></div>
+        </div>
       </div>
       <div class="menu-icons">
         <i class="fas fa-info"></i>
-        <i class="fas fa-expand"></i>
+        <i class="fas fa-expand" id="FullScreenWindow"></i>
       </div>
     </div>
 
@@ -65,88 +69,56 @@
           <div class="next-Btn"><i class="fas fa-chevron-right"></i></div>
         </div>
         <div class="wrapper">
-          <div
-            class="box"
-            onmouseover="setBackIMG(`blue-sea.jpg`)"
-            onmouseout="resetBackIMG(`old-honda.jpg`)"
-          >
+          <div class="box" onmouseover="setBackIMG(`blue-sea.jpg`)">
             <div class="box-content">
               <h2>urban feel</h2>
               <p>stills,vintage</p>
               <button class="CTA-btn">read more</button>
             </div>
           </div>
-          <div
-            class="box"
-            onmouseover="setBackIMG(`flame.jpg`)"
-            onmouseout="resetBackIMG(`NYC-Traffic.jpg`)"
-          >
+          <div class="box" onmouseover="setBackIMG(`flame.jpg`)">
             <div class="box-content">
               <h2>ny city</h2>
               <p>stills,vintage</p>
               <button class="CTA-btn">read more</button>
             </div>
           </div>
-          <div
-            class="box"
-            onmouseover="setBackIMG(`countryside.jpg`)"
-            onmouseout="resetBackIMG(`yellow-rider.jpg`)"
-          >
+          <div class="box" onmouseover="setBackIMG(`countryside.jpg`)">
             <div class="box-content">
               <h2>alaskan project</h2>
               <p>stills,vintage</p>
               <button class="CTA-btn">read more</button>
             </div>
           </div>
-          <div
-            class="box"
-            onmouseover="setBackIMG(`the-boat.jpg`)"
-            onmouseout="resetBackIMG(`surf-up.jpg`)"
-          >
+          <div class="box" onmouseover="setBackIMG(`the-boat.jpg`)">
             <div class="box-content">
               <h2>burners time</h2>
               <p>stills,vintage</p>
               <button class="CTA-btn">read more</button>
             </div>
           </div>
-          <div
-            class="box"
-            onmouseover="setBackIMG(`blue-sea.jpg`)"
-            onmouseout="resetBackIMG(`old-honda.jpg`)"
-          >
+          <div class="box" onmouseover="setBackIMG(`blue-sea.jpg`)">
             <div class="box-content">
               <h2>urban feel</h2>
               <p>stills,vintage</p>
               <button class="CTA-btn">read more</button>
             </div>
           </div>
-          <div
-            class="box"
-            onmouseover="setBackIMG(`flame.jpg`)"
-            onmouseout="resetBackIMG(`NYC-Traffic.jpg`)"
-          >
+          <div class="box" onmouseover="setBackIMG(`flame.jpg`)">
             <div class="box-content">
               <h2>ny city</h2>
               <p>stills,vintage</p>
               <button class="CTA-btn">read more</button>
             </div>
           </div>
-          <div
-            class="box"
-            onmouseover="setBackIMG(`countryside.jpg`)"
-            onmouseout="resetBackIMG(`yellow-rider.jpg`)"
-          >
+          <div class="box" onmouseover="setBackIMG(`countryside.jpg`)">
             <div class="box-content">
               <h2>alaskan project</h2>
               <p>stills,vintage</p>
               <button class="CTA-btn">read more</button>
             </div>
           </div>
-          <div
-            class="box"
-            onmouseover="setBackIMG(`the-boat.jpg`)"
-            onmouseout="resetBackIMG(`surf-up.jpg`)"
-          >
+          <div class="box" onmouseover="setBackIMG(`the-boat.jpg`)">
             <div class="box-content">
               <h2>burners time</h2>
               <p>stills,vintage</p>
@@ -166,13 +138,13 @@
     <script src="js/slick.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-      $('.wrapper').slick({
+      $(".wrapper").slick({
         dots: false,
-        prevArrow: $('.indicators .prev-Btn'),
-        nextArrow: $('.indicators .next-Btn'),
+        prevArrow: $(".indicators .prev-Btn"),
+        nextArrow: $(".indicators .next-Btn"),
         slidesToShow: 4,
         slidesToScroll: 4,
-      })
+      });
     </script>
   </body>
 </html>
