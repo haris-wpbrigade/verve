@@ -6,12 +6,14 @@ ToggleBtn.addEventListener('click', () => {
     NavMenu.classList.toggle('active')
     ToggleBtn.classList.toggle('active')
     Overlay.classList.toggle('active')
+    document.body.style.overflow = document.body.style.overflow === 'hidden' ? 'hidden scroll' : 'hidden'
 })
 
 Overlay.addEventListener('click', () => {
     NavMenu.classList.remove('active')
     ToggleBtn.classList.remove('active')
     Overlay.classList.remove('active')
+    document.body.style.overflow = 'hidden scroll'
 })
 
 // on hover Content Changed

@@ -313,16 +313,23 @@ body {
 }
 
 @media (max-width: 767px) {
+  .container {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .nav-menu,
+  .overlay {
+    position: fixed;
+    height: 100%;
+  }
+
   .nav-menu.active {
-    width: 450px;
+    width: 50%;
   }
 
   .menu-icons {
     display: none;
-  }
-
-  .container {
-    padding: 0;
   }
 
   .content-body {
@@ -360,41 +367,19 @@ body {
   .wrapper .box:nth-child(8) {
     background-image: url("../img/the-boat.jpg");
   }
-
-  .wrapper .box,
-  .wrapper .box .box-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .wrapper .box .box-content {
-    flex-direction: column;
-  }
-
-  .wrapper .box .box-content h2,
-  .wrapper .box .box-content p,
-  .wrapper .box .box-content .CTA-btn {
-    transform: none;
-  }
-
-  .wrapper .box .box-content .CTA-btn {
-    opacity: 1;
-    visibility: visible;
-  }
 }
 
-@media (max-width: 375px) {
-  .container {
-    height: 100%;
-    padding-top: 62px;
+@media (max-width: 575px) {
+  .nav-menu.active {
+    width: 65%;
   }
 
-  .nav-menu {
-    display: flex;
-    padding-top: 100px;
-    justify-content: center;
-    align-items: flex-start;
+  .toggleBtn span{
+    display: none;
+  }
+
+  .container {
+    height: 100%;
   }
 
   .content-body {
@@ -410,13 +395,17 @@ body {
   }
 
   .wrapper .box {
+    min-height: 272px;
     width: 100%;
     padding-top: 60px;
     padding-bottom: 15px;
-    pointer-events: none;
+    justify-content: center;
   }
 
-  .wrapper .box .box-content .CTA-btn {
-    pointer-events: auto;
+  .wrapper .box .box-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
