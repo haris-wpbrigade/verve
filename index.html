@@ -71,7 +71,7 @@
           <div class="next-Btn"><i class="fas fa-chevron-right"></i></div>
         </div>
         <div class="wrapper">
-          <div class="box" onmouseover="setBackIMG(`blue-sea.jpg`)" >
+          <div class="box" onmouseover="setBackIMG(`blue-sea.jpg`)">
             <div class="box-content">
               <h2>urban feel</h2>
               <p>stills,vintage</p>
@@ -148,19 +148,21 @@
         slidesToScroll: 4,
         responsive: [
           {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: true
-            }
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: true,
+              autoplay: true,
+              autoplaySpeed: 3500,
+            },
           },
           {
             breakpoint: 575,
-            settings: "unslick"
-          }
-        ]
+            settings: "unslick",
+          },
+        ],
       });
     </script>
   </body>
