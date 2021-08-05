@@ -9,7 +9,7 @@ ToggleBtn.addEventListener("click", () => {
   NavMenu.classList.toggle("active");
   ToggleBtn.classList.toggle("active");
   Overlay.classList.toggle("active");
-    //when menuActive the scroll disable otherwise able
+  //when menuActive the scroll disable otherwise able
   document.body.style.overflow =
     document.body.style.overflow === "hidden" ? "hidden scroll" : "hidden";
 });
@@ -26,9 +26,12 @@ Overlay.addEventListener("click", () => {
 =========== */
 const BackVideo = document.getElementById("myVideo");
 const PlayBackVideo = (Videosrc) => {
-    // in mobile view video disable
+  // in mobile view video disable
   if (window.matchMedia("(max-width: 767px)").matches) {
     console.log("Video is Stopped in MobMod");
+    BackVideo.pause();
+    BackVideo.removeAttribute("src"); // empty source
+    BackVideo.load();
   } else {
     BackVideo.src = `../img/${Videosrc}`;
     BackVideo.style.visibility = "visible";
@@ -42,6 +45,8 @@ const setBackIMG = (imgsrc) => {
   BackVideo.style.visibility = "hidden";
   BackVideo.style.opacity = "0";
   BackVideo.pause();
+  BackVideo.removeAttribute("src"); // empty source
+  BackVideo.load();
   BackGroundIMG.style.backgroundImage = `url(../img/${imgsrc})`;
 };
 
