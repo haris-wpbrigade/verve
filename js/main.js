@@ -42,12 +42,17 @@ const PlayBackVideo = (Videosrc) => {
 
 const BackGroundIMG = document.querySelector(".content-body");
 const setBackIMG = (imgsrc) => {
-  BackVideo.style.visibility = "hidden";
-  BackVideo.style.opacity = "0";
-  BackVideo.pause();
-  BackVideo.removeAttribute("src"); // empty source
-  BackVideo.load();
-  BackGroundIMG.style.backgroundImage = `url(../img/${imgsrc})`;
+  // in mobile view background Image change disable
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    console.log("Background Image changing is Stopped in MobMod");
+  } else {
+    BackVideo.style.visibility = "hidden";
+    BackVideo.style.opacity = "0";
+    BackVideo.pause();
+    BackVideo.removeAttribute("src"); // empty source
+    BackVideo.load();
+    BackGroundIMG.style.backgroundImage = `url(../img/${imgsrc})`;
+  }
 };
 
 /* ===========
