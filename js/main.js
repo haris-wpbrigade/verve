@@ -33,7 +33,7 @@ const PlayBackVideo = (Videosrc) => {
     BackVideo.removeAttribute("src"); // empty source
     BackVideo.load();
   } else {
-    BackVideo.src = `../img/${Videosrc}`;
+    BackVideo.src = `img/${Videosrc}`;
     BackVideo.style.visibility = "visible";
     BackVideo.style.opacity = "1";
     BackVideo.play();
@@ -51,7 +51,7 @@ const setBackIMG = (imgsrc) => {
     BackVideo.pause();
     BackVideo.removeAttribute("src"); // empty source
     BackVideo.load();
-    BackGroundIMG.style.backgroundImage = `url(../img/${imgsrc})`;
+    BackGroundIMG.style.backgroundImage = `url(img/${imgsrc})`;
   }
 };
 
